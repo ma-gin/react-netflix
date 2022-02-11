@@ -25,10 +25,9 @@ class SectionArea extends Component {
         <h1>{this.props.branding}</h1>
         <Row>
         
-{this.state.movie.map(movie => (
+{this.state.movie.filter((movie, idx) => idx < 6).map(movie => (
 
 <SingleMovie branding={movie.Poster}/>
-
 )
   )}
           
