@@ -3,7 +3,7 @@ import { Navbar, Nav, Image, Dropdown } from "react-bootstrap";
 const MyNavbar = function () {
   return (
     <>
-      <Navbar bg="dark" variant="dark" expand="lg">
+      <Navbar   expand="lg" className="text-white">
         <Navbar.Brand href="#home">
           <Image
             src="./img\Netflix_Logo_RGB.png"
@@ -13,14 +13,13 @@ const MyNavbar = function () {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#TV Shows">TV Shows</Nav.Link>
-            <Nav.Link href="#Movies">Movies</Nav.Link>
-            <Nav.Link href="#RecentlyAdded">Recently Added</Nav.Link>
-            <Nav.Link href="#My List">My List</Nav.Link>
-            <Nav.Link href="backoffice.html">Backoffice</Nav.Link>
-          </Nav>
+          <Nav className="mr-auto text-white">
+            <Nav.Link href="#home" className="text-white">Home</Nav.Link>
+            <Nav.Link href="#TV Shows" className="text-white">TV Shows</Nav.Link>
+            <Nav.Link href="#Movies" className="text-white">Movies</Nav.Link>
+            <Nav.Link href="#RecentlyAdded" className="text-white">Recently Added</Nav.Link>
+            <Nav.Link href="#My List" className="text-white">My List</Nav.Link>
+                      </Nav>
 
           <Image
             src="./img/icons8-ricerca.svg"

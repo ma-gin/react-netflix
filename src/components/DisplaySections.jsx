@@ -23,7 +23,7 @@ class DisplaySections extends Component {
 render(){
     return(<>
     <center><input type="text" className='mt-4' style={{width:'50%', margin:'auto', textAlign: 'center'}} placeholder='search your favorite movies' onChange={(event)=> this.handleSearch(event.target.value)}/></center>
-  {this.state.title.length > 3 && this.state.title.length < 50 && <SectionArea branding={this.state.title}/>}
+  {(this.state.title.length > 3 && this.state.title.length < 50) && <SectionArea branding={this.state.title}/>}
 
   {this.state.title.length < 4 &&    <SectionArea branding='Harry Potter'/>} 
   

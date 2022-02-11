@@ -8,6 +8,7 @@ class SectionArea extends Component {
   };
 
   componentDidMount = async () => {
+    this.setState({ movie: [] });
     let response = await fetch(
       "http://www.omdbapi.com/?apikey=660268d7&s=" + this.props.branding
     );
