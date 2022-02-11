@@ -13,8 +13,9 @@ function App() {
       <MyNavbar />
       <SecondNavbar />
 <DisplaySections/>
-<Footer/>
     </div>
+
+    
   );
 }
 
