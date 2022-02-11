@@ -4,17 +4,18 @@ import SingleMovie from "./SingleMovie";
 
 class SectionArea extends Component {
   state = {
+    name: this.props.branding,
     movie:[],
   };
 
   componentDidMount = async () => {
-    this.setState({ movie: [] });
+    this.setState({ ...this.state,movie: [] });
     let response = await fetch(
-      "http://www.omdbapi.com/?apikey=660268d7&s=" + this.props.branding
+      "http://www.omdbapi.com/?apikey=660268d7&s=" + this.state.name
     );
     let data = await response.json();
     console.log(data.Search);
-    this.setState({ movie: data.Search });
+    this.setState({ ...this.state, movie: data.Search });
     console.log('im the state' + this.state.movie[0].Title)
   };
   render() {

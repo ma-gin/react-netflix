@@ -6,18 +6,15 @@ class DisplaySections extends Component {
 
     state = {
         title : '',
-        length : 0
     }
 
 
     handleSearch = async (str) => {
 
-        this.setState({...this.state,title:''})
-        this.setState({...this.state, title: str})
-        console.log(this.state.title)
+        this.setState({title:''})
+        this.setState({title: str})
         // this.setState({...this.state, this.state.title.length})
     }
-
 
 
 render(){
