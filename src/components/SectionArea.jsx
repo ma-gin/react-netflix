@@ -22,7 +22,7 @@ class SectionArea extends Component {
         className="container-fluid mb-4"
         style={{ paddingLeft: "30px", paddingRight: "30px" }}
       >
-        <h1>Title</h1>
+        <h1>{this.props.branding}</h1>
         <Row>
         
 {this.state.movie.map(movie => (
