@@ -50,7 +50,7 @@ const Footer = () => {
           Contact Us
         </Col>
       </Row>
-      <Button>Service Code</Button>
+      <Button className="btn-a">Service Code</Button>
       <p>© 1997-2022 Netflix, Inc.</p>
     </Container>
   )
