@@ -20,6 +20,7 @@ class SectionArea extends Component {
     let data = await response.json();
     console.log(data.Search);
     this.setState({  movie: data.Search });
+    this.props.function(this.state.id)
 
   };
   
