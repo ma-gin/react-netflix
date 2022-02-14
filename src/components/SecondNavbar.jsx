@@ -3,7 +3,7 @@ const SecondNavbar = function () {
   return (
     <div className="d-flex justify-content-between align-items-center pr-3 pl-4">
       <div className="d-flex align-items-center">
-        <h2 className="toWhite">TV SHOWS</h2>
+        <h2 className="toWhite text-white">TV SHOWS</h2>
         <DropdownButton
           id="dropdown-basic-button"
           title="Genres"
