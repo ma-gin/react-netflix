@@ -1,15 +1,14 @@
-import { Dropdown, DropdownButton, Image } from "react-bootstrap";
+import { Dropdown, DropdownButton, Image } from "react-bootstrap"
 const SecondNavbar = function () {
   return (
     <div className="d-flex justify-content-between align-items-center pr-3 pl-4">
       <div className="d-flex align-items-center">
-        <h2 className="toWhite text-white">TV SHOWS</h2>
+        <h2 className="toWhite text-white mr-3 tv-h2">TV SHOWS</h2>
         <DropdownButton
           id="dropdown-basic-button"
           title="Genres"
           variant="outline-light"
-          className="ml-2 borderNone"
-        >
+          className="ml-2 borderNone py-1">
           <Dropdown.Item href="#/action-1">Documentary</Dropdown.Item>
           <Dropdown.Item href="#/action-2">Manga</Dropdown.Item>
           <Dropdown.Item href="#/action-3">Comedy</Dropdown.Item>
@@ -23,6 +22,6 @@ const SecondNavbar = function () {
         height={30}
       />
     </div>
-  );
-};
-export default SecondNavbar;
+  )
+}
+export default SecondNavbar

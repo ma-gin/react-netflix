@@ -3,9 +3,13 @@ import { Row } from "react-bootstrap"
 import SingleMovie from "./SingleMovie"
 
 class SectionArea extends Component {
-  state = {
-    movie: [],
-    id: undefined,
+  constructor(props) {
+    super(props)
+    this.state = {
+      movie: [],
+      id: undefined,
+      selected: this.props.comments,
+    }
   }
 
   changeId = (str) => {
@@ -13,6 +17,7 @@ class SectionArea extends Component {
   }
 
   componentDidMount = async () => {
+    console.log(this.state.selected)
     this.setState({ ...this.state, movie: [] })
     let response = await fetch(
       "http://www.omdbapi.com/?apikey=660268d7&s=" + this.props.branding
@@ -37,18 +42,16 @@ class SectionArea extends Component {
       <div
         className="container-fluid mb-4"
         style={{ paddingLeft: "30px", paddingRight: "30px" }}>
-        <h1 className="text-white">{this.props.branding}</h1>
+        <h1 className="text-white section-title">{this.props.branding}</h1>
         <Row>
-          {this.state.movie
-            .filter((movie, idx) => idx < 6)
-            .map((movie) => (
-              <SingleMovie
-                key={movie.imdbID}
-                onClick={(e) => this.props.function(this.state.id)}
-                function={this.changeId}
-                branding={movie}
-              />
-            ))}
+          {this.state.movie.map((movie) => (
+            <SingleMovie
+              key={movie.imdbID}
+              onClick={(e) => this.props.function(this.state.id)}
+              function={this.changeId}
+              branding={movie}
+            />
+          ))}
         </Row>
       </div>
     )

@@ -6,15 +6,19 @@ class DisplaySections extends Component {
   state = {
     title: "",
     id: undefined,
+    selected: false,
   }
 
   handleSearch = async (str) => {
-    this.setState({ ...this.state, title: "" })
     this.setState({ ...this.state, title: str })
   }
 
   changeDisplayId = (string) => {
-    this.setState({ ...this.state, id: string })
+    this.setState((prevState) => ({
+      ...this.state,
+      id: string,
+      selected: !prevState.selected,
+    }))
   }
 
   render() {
@@ -27,31 +31,47 @@ class DisplaySections extends Component {
             width: "30vw",
             minWidth: "250px",
             display: "block",
-            paddingInline: "1rem",
+            padding: "0.3rem 1rem",
           }}
           placeholder="search your favorite movies"
           onChange={(event) => this.handleSearch(event.target.value)}
         />
-        <CommentArea branding2={this.state.id} />
-        {this.state.title.length > 3 && this.state.title.length < 50 && (
+        {this.state.selected && <CommentArea branding2={this.state.id} />}
+        {/* {this.state.title.length > 2 && this.state.title.length < 50 && (
           <SectionArea
             function={this.changeDisplayId}
             branding={this.state.title}
           />
+        )} */}
+
+        {this.state.title.length < 4 && (
+          <SectionArea
+            function={this.changeDisplayId}
+            branding="Batman"
+            comments={this.state.selected}
+          />
         )}
 
         {this.state.title.length < 4 && (
-          <SectionArea function={this.changeDisplayId} branding="Batman" />
-        )}
-
-        {this.state.title.length < 4 && (
-          <SectionArea function={this.changeDisplayId} branding="Superman" />
-        )}
-        {this.state.title.length < 4 && (
-          <SectionArea function={this.changeDisplayId} branding="Iron Man" />
+          <SectionArea
+            function={this.changeDisplayId}
+            branding="Superman"
+            comments={this.state.selected}
+          />
         )}
         {this.state.title.length < 4 && (
-          <SectionArea function={this.changeDisplayId} branding="Avengers" />
+          <SectionArea
+            function={this.changeDisplayId}
+            branding="Iron Man"
+            comments={this.state.selected}
+          />
+        )}
+        {this.state.title.length < 4 && (
+          <SectionArea
+            function={this.changeDisplayId}
+            branding="Avengers"
+            comments={this.state.selected}
+          />
         )}
       </>
     )
