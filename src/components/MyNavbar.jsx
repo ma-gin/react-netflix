@@ -1,9 +1,8 @@
-import { Navbar, Nav, Image, Dropdown } from "react-bootstrap";
-// backoffices is wrong linked, check it
+import { Navbar, Nav, Image, Dropdown } from "react-bootstrap"
 const MyNavbar = function () {
   return (
     <>
-      <Navbar   expand="lg" className="text-white">
+      <Navbar expand="lg" className="text-white">
         <Navbar.Brand href="#home">
           <Image
             src="./img\Netflix_Logo_RGB.png"
@@ -14,12 +13,22 @@ const MyNavbar = function () {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto text-white">
-            <Nav.Link href="#home" className="text-white">Home</Nav.Link>
-            <Nav.Link href="#TV Shows" className="text-white">TV Shows</Nav.Link>
-            <Nav.Link href="#Movies" className="text-white">Movies</Nav.Link>
-            <Nav.Link href="#RecentlyAdded" className="text-white">Recently Added</Nav.Link>
-            <Nav.Link href="#My List" className="text-white">My List</Nav.Link>
-                      </Nav>
+            <Nav.Link href="#home" className="text-white">
+              Home
+            </Nav.Link>
+            <Nav.Link href="#TV Shows" className="text-white">
+              TV Shows
+            </Nav.Link>
+            <Nav.Link href="#Movies" className="text-white">
+              Movies
+            </Nav.Link>
+            <Nav.Link href="#RecentlyAdded" className="text-white">
+              Recently Added
+            </Nav.Link>
+            <Nav.Link href="#My List" className="text-white">
+              My List
+            </Nav.Link>
+          </Nav>
 
           <Image
             src="./img/icons8-ricerca.svg"
@@ -47,7 +56,7 @@ const MyNavbar = function () {
         </Navbar.Collapse>
       </Navbar>
     </>
-  );
-};
+  )
+}
 
-export default MyNavbar;
+export default MyNavbar

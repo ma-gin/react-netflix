@@ -27,13 +27,12 @@ class SingleComment extends Component {
       })
       if (response.ok) {
         let data = await response.json()
-        console.log("THIS IS THE DATA " + data)
         this.setState({
           ...this.state.selected,
           comments: data,
         })
       } else {
-        alert("something went wrong :(")
+        console.log("server error")
       }
     } catch (error) {
       console.log(error)
@@ -59,8 +58,8 @@ class SingleComment extends Component {
         <div onClick={this.handleClick}>
           <ListGroup style={{ width: "100%", color: "black !important" }}>
             <Row>
-              {this.state.comments.map((comment, idx) => (
-                <Col key={idx + 1} xs={12} md={6} lg={4} xl={3}>
+              {this.state.comments.map((comment) => (
+                <Col key={comment._id} xs={12} md={6} lg={4} xl={3}>
                   <ListGroup.Item
                     style={{ fontSize: "14px", color: "black !important" }}>
                     {comment.comment}
@@ -70,6 +69,7 @@ class SingleComment extends Component {
                     {comment.rate}
                   </ListGroup.Item>
                   <Button
+                    className="mt-1"
                     variant="danger"
                     onClick={() => this.handleDelete(comment._id)}>
                     Delete
