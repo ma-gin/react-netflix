@@ -1,7 +1,7 @@
 import { Card, Col } from "react-bootstrap"
 import SingleComment from "./SingleComment"
 
-const CommentArea = (props) => (
+const CommentArea = ({ comment }) => (
   <Col md={12}>
     <Card
       className="mx-auto"
@@ -12,11 +12,11 @@ const CommentArea = (props) => (
         marginBottom: "20px",
         backgroundColor: "gray",
       }}
-      key={props.branding2}>
+      key={comment}>
       <Card.Header>Comments</Card.Header>
       <Card.Body>
         <blockquote className="blockquote mb-0">
-          <SingleComment branding5={props.branding2} />
+          <SingleComment branding5={comment} />
         </blockquote>
       </Card.Body>
     </Card>

@@ -17,7 +17,6 @@ class DisplaySections extends Component {
     this.setState((prevState) => ({
       ...this.state,
       id: string,
-      selected: !prevState.selected,
     }))
   }
 
@@ -36,37 +35,37 @@ class DisplaySections extends Component {
           placeholder="search your favorite movies"
           onChange={(event) => this.handleSearch(event.target.value)}
         />
-        {this.state.selected && <CommentArea branding2={this.state.id} />}
-        {/* {this.state.title.length > 2 && this.state.title.length < 50 && (
+        {this.state.selected && <CommentArea comment={this.state.id} />}
+        {this.state.title.length > 2 && this.state.title.length < 50 && (
           <SectionArea
             function={this.changeDisplayId}
             branding={this.state.title}
           />
-        )} */}
+        )}
 
-        {this.state.title.length < 4 && (
+        {this.state.title.length < 2 && (
           <SectionArea
             function={this.changeDisplayId}
-            branding="Batman"
+            branding="Batman" //these would never be hard-coded of course
             comments={this.state.selected}
           />
         )}
 
-        {this.state.title.length < 4 && (
+        {this.state.title.length < 2 && (
           <SectionArea
             function={this.changeDisplayId}
             branding="Superman"
             comments={this.state.selected}
           />
         )}
-        {this.state.title.length < 4 && (
+        {this.state.title.length < 2 && (
           <SectionArea
             function={this.changeDisplayId}
             branding="Iron Man"
             comments={this.state.selected}
           />
         )}
-        {this.state.title.length < 4 && (
+        {this.state.title.length < 2 && (
           <SectionArea
             function={this.changeDisplayId}
             branding="Avengers"

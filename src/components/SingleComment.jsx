@@ -38,6 +38,8 @@ class SingleComment extends Component {
       console.log(error)
     }
   }
+  // handleAdd = () => {}
+  // handleEdit = () => {}
 
   handleDelete = async (str) => {
     let httpFetch = "https://striveschool-api.herokuapp.com/api/comments/" + str
@@ -68,8 +70,20 @@ class SingleComment extends Component {
                     style={{ fontSize: "14px", color: "black !important" }}>
                     {comment.rate}
                   </ListGroup.Item>
+                  {/* <Button
+                    className="mt-3"
+                    variant="light"
+                    onClick={() => this.handleAdd(comment._id)}>
+                    Add
+                  </Button>
                   <Button
-                    className="mt-1"
+                    className="mt-3 mx-4"
+                    variant="dark"
+                    onClick={() => this.handleEdit(comment._id)}>
+                    Edit
+                  </Button> */}
+                  <Button
+                    className="mt-3"
                     variant="danger"
                     onClick={() => this.handleDelete(comment._id)}>
                     Delete
