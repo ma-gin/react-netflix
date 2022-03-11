@@ -70,20 +70,20 @@ class SingleComment extends Component {
                     style={{ fontSize: "14px", color: "black !important" }}>
                     {comment.rate}
                   </ListGroup.Item>
-                  {/* <Button
-                    className="mt-3"
+                  <Button
+                    className="my-2"
                     variant="light"
                     onClick={() => this.handleAdd(comment._id)}>
                     Add
                   </Button>
                   <Button
-                    className="mt-3 mx-4"
+                    className="my-2 mx-2"
                     variant="dark"
                     onClick={() => this.handleEdit(comment._id)}>
                     Edit
-                  </Button> */}
+                  </Button>
                   <Button
-                    className="mt-3"
+                    className="my-2"
                     variant="danger"
                     onClick={() => this.handleDelete(comment._id)}>
                     Delete

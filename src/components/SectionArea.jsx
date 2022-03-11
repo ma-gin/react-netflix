@@ -8,7 +8,6 @@ class SectionArea extends Component {
     this.state = {
       movie: [],
       id: undefined,
-      selected: this.props.comments,
     }
   }
 
@@ -19,7 +18,7 @@ class SectionArea extends Component {
   componentDidMount = async () => {
     this.setState({ ...this.state, movie: [] })
     let response = await fetch(
-      "http://www.omdbapi.com/?apikey=660268d7&s=" + this.props.branding
+      "http://www.omdbapi.com/?apikey=660268d7&s=" + this.props.title
     )
     let data = await response.json()
     this.setState({ movie: data.Search })
@@ -28,9 +27,11 @@ class SectionArea extends Component {
 
   componentDidUpdate = async (prevProps, prevState) => {
     if (prevProps !== this.props) {
-      this.setState({ ...this.state, movie: [] })
+      this.setState({ ...this.state, movie: [], selected: !prevState })
+      console.log(this.state)
+
       let response = await fetch(
-        "http://www.omdbapi.com/?apikey=660268d7&s=" + this.props.branding
+        "http://www.omdbapi.com/?apikey=660268d7&s=" + this.props.title
       )
       let data = await response.json()
       this.setState({ ...this.state, movie: data.Search })
@@ -41,12 +42,15 @@ class SectionArea extends Component {
       <div
         className="container-fluid mb-4"
         style={{ paddingLeft: "30px", paddingRight: "30px" }}>
-        <h1 className="text-white section-title">{this.props.branding}</h1>
+        <h1 className="text-white section-title">{this.props.title}</h1>
         <Row>
           {this.state.movie.map((movie) => (
             <SingleMovie
               key={movie.imdbID}
-              onClick={(e) => this.props.function(this.state.id)}
+              onClick={() => {
+                this.setState({ ...this.state, selected: true })
+                this.props.function(this.state.id)
+              }}
               function={this.changeId}
               branding={movie}
             />
