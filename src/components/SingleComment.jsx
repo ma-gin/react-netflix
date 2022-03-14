@@ -1,6 +1,8 @@
 import { Button, ListGroup, Row, Col } from "react-bootstrap"
 import { Component } from "react"
 
+const baseURL = "https://striveschool-api.herokuapp.com/api/comments/"
+
 class SingleComment extends Component {
   state = {
     selected: false,
@@ -16,9 +18,7 @@ class SingleComment extends Component {
   }
 
   componentDidMount = async () => {
-    let httpFetch =
-      "https://striveschool-api.herokuapp.com/api/comments/" +
-      this.props.branding5
+    let httpFetch = baseURL + this.props.branding5
     try {
       let response = await fetch(httpFetch, {
         headers: {
@@ -38,11 +38,15 @@ class SingleComment extends Component {
       console.log(error)
     }
   }
-  // handleAdd = () => {}
-  // handleEdit = () => {}
+  handleAdd = (id) => {
+    console.log(id)
+  } //how to add input field onClick
+  handleEdit = (id) => {
+    console.log(id)
+  }
 
   handleDelete = async (str) => {
-    let httpFetch = "https://striveschool-api.herokuapp.com/api/comments/" + str
+    let httpFetch = baseURL + str
     fetch(httpFetch, {
       method: "DELETE",
       headers: {

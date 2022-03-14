@@ -37,7 +37,10 @@ const MyNavbar = function () {
             width={25}
           />
           <Dropdown>
-            <Dropdown.Toggle variant="secondary" id="dropdown-basic">
+            <Dropdown.Toggle
+              variant="secondary"
+              id="dropdown-basic"
+              className="ml-2">
               KIDS
               <Image
                 className="mx-2"
